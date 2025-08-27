@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registrar — Clube dos Livros</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="auth-page container card">
+    <h2>Criar conta</h2>
+    <form action="backend/register.php" method="POST" class="form">
+      <label>Usuário</label>
+      <input name="username" type="text" required>
+      <label>Email</label>
+      <input name="email" type="email" required>
+      <label>Senha</label>
+      <input name="password" type="password" required>
+      <div class="form-actions">
+        <button class="btn">Registrar</button>
+        <a href="login.html" class="btn light">Já tenho conta</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

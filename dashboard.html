@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard — Clube dos Livros</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <h1>📖 Meu Painel</h1>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Início</a>
+        <a href="backend/logout.php" class="btn danger">Sair</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap grid-3">
+    <!-- left column: profile + achievements -->
+    <aside class="card profile-col">
+      <div class="profile-head">
+        <div class="avatar">📘</div>
+        <div>
+          <h3 id="ui-username">—</h3>
+          <div class="muted">Rank: <span id="ui-badge">—</span></div>
+        </div>
+      </div>
+      <div class="profile-stats">
+        <div>Pontos: <strong id="ui-points">0</strong></div>
+        <div>Livros: <strong id="ui-total-books">0</strong></div>
+        <div>Streak: <strong id="ui-streak">0</strong> dias</div>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="muted">Progresso para próximo rank: <span id="ui-next-rank">—</span></div>
+        <div class="meter"><div id="progress" class="meter-bar" style="width:0%"></div></div>
+      </div>
+
+      <button id="show-achievements" class="btn">Ver Conquistas</button>
+      <div id="achievements-list" class="achievements"></div>
+    </aside>
+
+    <!-- central: books + interactions -->
+    <section class="card books-col">
+      <div class="section-head">
+        <h3>Livros disponíveis</h3>
+        <div>
+          <label for="filter-genre" class="muted">Filtrar por gênero:</label>
+          <select id="filter-genre"></select>
+        </div>
+      </div>
+
+      <ul id="book-list" class="book-list"></ul>
+    </section>
+
+    <!-- right: leaderboards -->
+    <aside class="card leaderboard-col">
+      <div class="section-head">
+        <h3>Leaderboards</h3>
+        <select id="leader-mode">
+          <option value="overall">Global</option>
+          <option value="weekly">Semanal</option>
+          <option value="monthly">Mensal</option>
+          <option value="genre">Por gênero</option>
+        </select>
+      </div>
+      <div id="leaderboard-card">
+        <ol id="leaderboard"></ol>
+      </div>
+      <div class="small muted">Dica: selecione 'Por gênero' e escolha o gênero desejado.</div>
+    </aside>
+  </main>
+
+  <!-- achievements modal (hidden) -->
+  <div id="ach-modal" class="modal-hidden">
+    <div class="modal-card">
+      <h3>Conquistas</h3>
+      <div id="modal-achievements"></div>
+      <button id="close-ach-modal" class="btn light">Fechar</button>
+    </div>
+  </div>
+
+  <footer class="wrap site-footer">
+    <p>Boa leitura — e bons pontos! ✨</p>
+  </footer>
+</body>
+</html>
